@@ -1,7 +1,21 @@
+
+
 // my generator
-function* generatorExample(urlA, urlB) {
-  const resultFromA = yield asyncRequest( urlA );
-  const data = JSON.parse( resultFromA );
-  const resultFromB = yield asyncRequest(`${urlB}?id=${data.id}`);
-  return JSON.parse( resultFromB );
-} 
+function* myGenerator() {
+  yield;
+  console.log('fizz');
+  yield;
+  console.log('buzz');
+  yield;
+  console.log('fizz buzz');
+}
+
+> const gen = myGenerator();
+> gen.next();
+> gen.next();
+// fizz
+> gen.next();
+// buzz
+> gen.next();
+// fizz buzz
+>
